@@ -15,14 +15,13 @@ public class GreetRestController {
 //        ResponseEntity<String> responseEntity = rt.getForEntity("http://localhost:8082/welcome", String.class);
 //        String welcomeResponse = responseEntity.getBody();
 
-        WebClient webClient = WebClient.create();
+//        WebClient webClient = WebClient.create();
+//        String welcomeResponse = webClient.get()
+//                .uri("http://localhost:8082/welcome")
+//                .retrieve()
+//                .bodyToMono(String.class)
+//                .block();
 
-        String welcomeResponse = webClient.get()
-                .uri("http://localhost:8082/welcome")
-                .retrieve()
-                .bodyToMono(String.class)
-                .block();
-
-        return welcomeResponse + "Hello We are learning microservices";
+        return "Hello We are learning microservices";
     }
 }

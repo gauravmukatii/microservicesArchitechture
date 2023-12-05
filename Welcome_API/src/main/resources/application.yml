@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: WELCOME_API
+    name: WELCOME-API
   boot:
     admin:
       client:

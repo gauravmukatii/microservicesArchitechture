@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: GREET_API
+    name: GREET-API
   boot:
     admin:
       client:
