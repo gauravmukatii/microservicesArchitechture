@@ -1,5 +1,7 @@
 package in.project.Greet_API.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +10,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @RestController
 public class GreetRestController {
+
+    @Autowired
+    private Environment env;
 
     @GetMapping("/greet")
     public String getGreetMsg(){
@@ -22,6 +27,7 @@ public class GreetRestController {
 //                .bodyToMono(String.class)
 //                .block();
 
-        return "Hello We are learning microservices";
+        String port = env.getProperty("server.port");
+        return "Hello We are running on port : " + port;
     }
 }
