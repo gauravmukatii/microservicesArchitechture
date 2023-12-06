@@ -1,7 +1,6 @@
 package in.springboot.Redis_Cache.rest;
 
 import in.springboot.Redis_Cache.binding.Country;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,7 @@ import java.util.Map;
 @RestController
 public class CountryRestController {
 
-    HashOperations<String, Object, Object> opsForHash = null;
+    private HashOperations<String, Object, Object> opsForHash = null;
     public CountryRestController(RedisTemplate<String, Country> rt){
          this.opsForHash = rt.opsForHash();
     }

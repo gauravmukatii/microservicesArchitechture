@@ -12,7 +12,7 @@ public class RedisConfig {
     @Bean
     public JedisConnectionFactory jedisConn(){
         JedisConnectionFactory jedis = new JedisConnectionFactory();
-
+        // REDIS SERVER PROPERTIES
         return jedis;
     }
 
